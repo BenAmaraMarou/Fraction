@@ -58,5 +58,12 @@ namespace fraction_kata.Tests
             Fraction actual = new Fraction(1, 2).Add(new Fraction(1, 2));
             Assert.AreEqual(new Fraction(1), actual);
         }
+
+        [Test]
+        public void ReduceResultOfFractionsWithMultipleDenominators()
+        {
+            Fraction actual = new Fraction(3, 4).Add(new Fraction(5, 8));
+            Assert.AreEqual(new Fraction(11, 8), actual);
+        }
     }
 }
