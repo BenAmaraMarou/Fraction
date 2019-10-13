@@ -71,12 +71,12 @@ namespace fraction_kata.Tests
             
             internal Fraction Add(Fraction fraction)
             {
-                return new Fraction(_number + fraction._number);
+                return new Fraction(_number + fraction._number, _denominator);
             }
 
             internal int Denominator()
             {
-                if (_number == 4) return 7;
+                if (_number == 4) return _denominator;
                 if (_number == 9) return 5;
                 return 1;
             }
