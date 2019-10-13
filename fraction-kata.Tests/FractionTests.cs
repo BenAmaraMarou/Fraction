@@ -55,24 +55,21 @@ namespace fraction_kata.Tests
 
         private class Fraction
         {
-            private readonly int _number;
+            private readonly int _numerator;
             private readonly int _denominator;
 
-            public Fraction(int number)
-            {
-                _number = number;
-                _denominator = 1;
-            }
+            public Fraction(int number) : this(number, 1)
+            { }
 
             public Fraction(int number, int denominator)
             {
-                _number = number;
+                _numerator = number;
                 _denominator = denominator;
             }
             
             internal Fraction Add(Fraction fraction)
             {
-                return new Fraction(_number + fraction._number, _denominator);
+                return new Fraction(_numerator + fraction._numerator, _denominator);
             }
 
             internal int Denominator()
@@ -82,7 +79,7 @@ namespace fraction_kata.Tests
 
             internal int Numerator()
             {
-                return _number;
+                return _numerator;
             }
         }
     }
