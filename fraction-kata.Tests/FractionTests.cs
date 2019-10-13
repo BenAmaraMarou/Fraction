@@ -28,23 +28,7 @@ namespace fraction_kata.Tests
             Assert.AreEqual(-3, actual.Numerator());
             Assert.AreEqual(1, actual.Denominator());
         }
-
-        [Test]
-        public void AddFractionsWithDefaultDenominator()
-        {
-            Fraction actual = new Fraction(5, 1).Add(new Fraction(2, 1));
-            Assert.AreEqual(7, actual.Numerator());
-            Assert.AreEqual(1, actual.Denominator());
-        }
-
-        [Test]
-        public void AddZeroToFraction()
-        {
-            Fraction actual = new Fraction(9, 5).Add(new Fraction(0));
-            Assert.AreEqual(9, actual.Numerator());
-            Assert.AreEqual(5, actual.Denominator());
-        }
-
+        
         [Test]
         public void AddFractionsWithSameDenominator()
         {
