@@ -80,9 +80,7 @@ namespace fraction_kata.Tests
             {
                 if(_denominator != fraction._denominator)
                 {
-                    if (_numerator == -1 && _denominator == 2) return new Fraction(_numerator * fraction._denominator + _denominator * fraction._numerator, _denominator * fraction._denominator);
-                    if (_denominator == 2) return new Fraction(_numerator * fraction._denominator + _denominator * fraction._numerator, _denominator * fraction._denominator);
-                    if (fraction._denominator == 5) return new Fraction(_numerator * fraction._denominator + _denominator * fraction._numerator, _denominator * fraction._denominator);
+                    return new Fraction(_numerator * fraction._denominator + _denominator * fraction._numerator, _denominator * fraction._denominator);
                 }
                 return new Fraction(_numerator + fraction._numerator, _denominator);
             }
