@@ -3,7 +3,7 @@ using System;
 
 namespace fraction_kata.Tests
 {
-    public class FractionTests
+    public class FractionTest
     {
         [TestCase(0)]
         [TestCase(1)]

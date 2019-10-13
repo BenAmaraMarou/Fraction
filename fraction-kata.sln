@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.852
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "fraction-kata.Tests", "fraction-kata.Tests\fraction-kata.Tests.csproj", "{64AFB9F1-BAB1-4DD7-8FD1-19F835024DF2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fraction-kata", "fraction-kata\fraction-kata.csproj", "{3568784D-D2C5-4B70-ABE5-A171B7FBEC66}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{64AFB9F1-BAB1-4DD7-8FD1-19F835024DF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{64AFB9F1-BAB1-4DD7-8FD1-19F835024DF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{64AFB9F1-BAB1-4DD7-8FD1-19F835024DF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3568784D-D2C5-4B70-ABE5-A171B7FBEC66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3568784D-D2C5-4B70-ABE5-A171B7FBEC66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3568784D-D2C5-4B70-ABE5-A171B7FBEC66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3568784D-D2C5-4B70-ABE5-A171B7FBEC66}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
