@@ -38,7 +38,7 @@ namespace fraction_kata.Tests
         }
 
         [Test]
-        public void Add_1_on_2_to_1_on_3()
+        public void AddFractionsWithDifferentDenominators()
         {
             Fraction actual = new Fraction(1, 2).Add(new Fraction(1, 3));
             Assert.AreEqual(5, actual.Numerator());
@@ -46,16 +46,7 @@ namespace fraction_kata.Tests
         }
 
         [Test]
-        public void Add_1_to_1_on_5()
-        {
-            Fraction actual = new Fraction(1).Add(new Fraction(1, 5));
-            Assert.AreEqual(6, actual.Numerator());
-            Assert.AreEqual(5, actual.Denominator());
-        }
-
-
-        [Test]
-        public void AddNegativeFractions()
+        public void AddNegativeFractionsOnNumerator()
         {
             Fraction actual = new Fraction(-1, 2).Add(new Fraction(-1, 4));
             Assert.AreEqual(-6, actual.Numerator());
