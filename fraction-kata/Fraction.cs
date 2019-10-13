@@ -35,7 +35,7 @@ namespace fraction_kata
 
         public Fraction Multiply(Fraction fraction)
         {
-            return new Fraction(_numerator * fraction._numerator);
+            return new Fraction(_numerator * fraction._numerator, _denominator * fraction._denominator);
         }
 
         public Fraction Minus()
