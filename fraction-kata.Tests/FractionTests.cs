@@ -78,16 +78,15 @@ namespace fraction_kata.Tests
             public Fraction(int number) : this(number, 1)
             { }
 
-            public Fraction(int number, int denominator)
+            public Fraction(int numerator, int denominator)
             {
-                _numerator = number;
-                _denominator = denominator;
+                var sign = denominator < 0 ? -1 : 1;
+                _numerator = numerator * sign;
+                _denominator = denominator * sign;
             }
 
             internal Fraction Add(Fraction fraction)
             {
-                if (_denominator == -2) return new Fraction(-6, 8);
-                if (_denominator == -7) return new Fraction(-3, 7);
                 if(_denominator != fraction._denominator)
                 {
                     return new Fraction(_numerator * fraction._denominator + _denominator * fraction._numerator, _denominator * fraction._denominator);
