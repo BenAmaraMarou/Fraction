@@ -13,8 +13,9 @@ namespace fraction_kata
         public Fraction(int numerator, int denominator)
         {
             var sign = denominator < 0 ? -1 : 1;
-            _numerator = numerator * sign;
-            _denominator = denominator * sign;
+            var gcd = GeatestCommonDivisor.Gcd(numerator, denominator);
+            _numerator = numerator * sign / gcd;
+            _denominator = denominator * sign / gcd;
         }
 
         public Fraction Add(Fraction fraction)

@@ -2,7 +2,7 @@
 
 namespace fraction_kata
 {
-    public static class GeatestCommonDivisor
+    public class GeatestCommonDivisor
     {
         public static int Gcd(int a, int b)
         {
