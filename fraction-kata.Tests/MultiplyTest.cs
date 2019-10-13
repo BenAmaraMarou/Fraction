@@ -32,5 +32,16 @@ namespace fraction_kata.Tests
             Assert.AreEqual(new Fraction(2, 21), new Fraction(1, -3).Multiply(new Fraction(-2, 7)));
         }
 
+        [Test]
+        public void ReduceToOne()
+        {
+            Assert.AreEqual(new Fraction(1), new Fraction(3).Multiply(new Fraction(1, 3)));
+        }
+
+        [Test]
+        public void ReduceFractions()
+        {
+            Assert.AreEqual(new Fraction(2, 3), new Fraction(3, 7).Multiply(new Fraction(14, 9)));
+        }
     }
 }
