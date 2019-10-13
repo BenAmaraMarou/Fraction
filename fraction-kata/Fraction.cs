@@ -10,6 +10,11 @@ namespace fraction_kata
         public Fraction(int number) : this(number, 1)
         { }
 
+        public Fraction Substract(Fraction fraction)
+        {
+            return new Fraction(0);
+        }
+
         public Fraction(int numerator, int denominator)
         {
             if (denominator == 0)
