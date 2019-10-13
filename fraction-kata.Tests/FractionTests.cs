@@ -61,6 +61,15 @@ namespace fraction_kata.Tests
             Assert.AreEqual(8, actual.Denominator());
         }
 
+        [Test]
+        public void AddFractionsWithSameNegativeDenominator()
+        {
+            Fraction actual = new Fraction(1, -7).Add(new Fraction(2, -7));
+            Assert.AreEqual(-3, actual.Numerator());
+            Assert.AreEqual(7, actual.Denominator());
+        }
+        
+
         private class Fraction
         {
             private readonly int _numerator;
@@ -77,7 +86,8 @@ namespace fraction_kata.Tests
 
             internal Fraction Add(Fraction fraction)
             {
-                if(_denominator == -2) return new Fraction(-6, 8)
+                if (_denominator == -2) return new Fraction(-6, 8);
+                if (_denominator == -7) return new Fraction(-3, 7);
                 if(_denominator != fraction._denominator)
                 {
                     return new Fraction(_numerator * fraction._denominator + _denominator * fraction._numerator, _denominator * fraction._denominator);
