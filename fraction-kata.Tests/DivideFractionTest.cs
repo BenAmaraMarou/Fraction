@@ -26,5 +26,23 @@ namespace fraction_kata.Tests
         {
             Assert.AreEqual(new Fraction(7, 2), new Fraction(1, 2).Divide(new Fraction(1, 7)));
         }
+
+        [Test]
+        public void NegativeFractions()
+        {
+            Assert.AreEqual(new Fraction(-4, 3), new Fraction(1, -3).Divide(new Fraction(-1, -4)));
+        }
+
+        [Test]
+        public void ReduceToOne()
+        {
+            Assert.AreEqual(new Fraction(1), new Fraction(5, 3).Divide(new Fraction(5, 3)));
+        }
+
+        [Test]
+        public void Reduce()
+        {
+            Assert.AreEqual(new Fraction(1, 2), new Fraction(2, 8).Divide(new Fraction(1, 2)));
+        }
     }
 }
