@@ -28,6 +28,22 @@ namespace fraction_kata.Tests
             Assert.AreEqual(5, Gcd(5, 30));
         }
 
+        [Test]
+        public void NumbersWithCommonFactor()
+        {
+            Assert.AreEqual(2, Gcd(6, 8));
+            Assert.AreEqual(21, Gcd(63, 147));
+            Assert.AreEqual(-15, Gcd(-105, -150));
+        }
+
+        [Test]
+        public void NegativeNumbers()
+        {
+            Assert.AreEqual(-4, Gcd(-28, -32));
+            Assert.AreEqual(4, Gcd(-28, 32));
+            Assert.AreEqual(-4, Gcd(28, -32));
+        }
+
         private int Gcd(int a, int b)
         {
             while (b != 0)
