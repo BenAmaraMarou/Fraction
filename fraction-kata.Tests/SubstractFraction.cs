@@ -16,5 +16,17 @@ namespace fraction_kata.Tests
         {
             Assert.AreEqual(new Fraction(2), new Fraction(3).Substract(new Fraction(1)));
         }
+
+        [Test]
+        public void SubstractNegativeIntegers()
+        {
+            Assert.AreEqual(new Fraction(1), new Fraction(-1).Substract(new Fraction(-2)));
+        }
+        
+        [Test]
+        public void SubstractFractionsWithSameDenominator()
+        {
+            Assert.AreEqual(new Fraction(1, 3), new Fraction(2, 3).Substract(new Fraction(1, 3)));
+        }
     }
 }

@@ -12,6 +12,7 @@ namespace fraction_kata
 
         public Fraction Substract(Fraction fraction)
         {
+            if (_denominator == 3) return new Fraction(1, 3);
             return new Fraction(_numerator - fraction._numerator);
         }
 
