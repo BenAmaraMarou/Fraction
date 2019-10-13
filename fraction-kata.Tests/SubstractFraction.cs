@@ -28,5 +28,11 @@ namespace fraction_kata.Tests
         {
             Assert.AreEqual(new Fraction(1, 3), new Fraction(2, 3).Substract(new Fraction(1, 3)));
         }
+        
+        [Test]
+        public void SubstractFractionsWithDifferentDenominators()
+        {
+            Assert.AreEqual(new Fraction(1, 6), new Fraction(1, 2).Substract(new Fraction(1, 3)));
+        }
     }
 }
