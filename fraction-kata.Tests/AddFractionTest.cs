@@ -8,28 +8,28 @@ namespace fraction_kata.Tests
         [TestCase(0)]
         [TestCase(1)]
         [TestCase(-1)]
-        public void AddZero(int nonZero)
+        public void Zero(int number)
         {
-            Assert.AreEqual(new Fraction(nonZero), new Fraction(nonZero).Add(new Fraction(0)));
+            Assert.AreEqual(new Fraction(number), new Fraction(number).Add(new Fraction(0)));
         }
 
         [TestCase(1, 2)]
         [TestCase(-1, 2)]
         [TestCase(1, -2)]
         [TestCase(-1, -2)]
-        public void NonZeroInteger(int first, int second)
+        public void NonZeroIntegers(int first, int second)
         {
             Assert.AreEqual(new Fraction(first + second), new Fraction(first).Add(new Fraction(second)));
         }
 
         [Test]
-        public void FractionsWithSameDenominator()
+        public void SameDenominator()
         {
             Assert.AreEqual(new Fraction(4, 7), new Fraction(3, 7).Add(new Fraction(1, 7)));
         }
 
         [Test]
-        public void FractionsWithDifferentDenominators()
+        public void DifferentDenominators()
         {
             Assert.AreEqual(new Fraction(5, 6), new Fraction(1, 2).Add(new Fraction(1, 3)));
         }
