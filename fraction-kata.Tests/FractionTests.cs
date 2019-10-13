@@ -4,28 +4,17 @@ namespace fraction_kata.Tests
 {
     public class FractionTests
     {
-        [Test]
-        public void AddZeroToZero()
+        [TestCase(1)]
+        [TestCase(-1)]
+        public void AddZeroToNonZero(int nonZero)
         {
-            Assert.AreEqual(0, new Fraction(0).Add(new Fraction(0)));
+            Assert.AreEqual(nonZero, new Fraction(nonZero).Add(new Fraction(0)));
         }
 
         [Test]
-        public void AddZeroToOne()
-        {
-            Assert.AreEqual(1, new Fraction(1).Add(new Fraction(0)));
-        }
-
-        [Test]
-        public void AddOneToTwo()
+        public void AddPositiveIntegers()
         {
             Assert.AreEqual(3, new Fraction(1).Add(new Fraction(2)));
-        }
-
-        [Test]
-        public void AddNegativeToPositive()
-        {
-            Assert.AreEqual(1, new Fraction(-1).Add(new Fraction(2)));
         }
 
         [Test]
