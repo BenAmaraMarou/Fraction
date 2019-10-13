@@ -10,6 +10,12 @@ namespace fraction_kata.Tests
             Assert.AreEqual(0, new Fraction(0).Add(new Fraction(0)));
         }
 
+        [Test]
+        public void AddZeroToOne()
+        {
+            Assert.AreEqual(1, new Fraction(1).Add(new Fraction(0)));
+        }
+
         private class Fraction
         {
             private readonly int _number;
@@ -21,7 +27,7 @@ namespace fraction_kata.Tests
 
             internal int Add(Fraction fraction)
             {
-                return 0;
+                return _number;
             }
         }
     }
