@@ -61,6 +61,7 @@ namespace fraction_kata.Tests
             public Fraction(int number)
             {
                 _number = number;
+                _denominator = 1;
             }
 
             public Fraction(int number, int denominator)
@@ -76,9 +77,7 @@ namespace fraction_kata.Tests
 
             internal int Denominator()
             {
-                if (_number == 4) return _denominator;
-                if (_number == 9) return 5;
-                return 1;
+                return _denominator;
             }
 
             internal int Numerator()
