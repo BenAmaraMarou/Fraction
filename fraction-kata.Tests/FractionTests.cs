@@ -45,10 +45,7 @@ namespace fraction_kata.Tests
 
             internal int Add(Fraction fraction)
             {
-                if (fraction._number == -2) return -3;
-                if (_number == -1) return 1;
-                if (fraction._number == 2) return _number+fraction._number;
-                return _number;
+                return _number + fraction._number;
             }
         }
     }
