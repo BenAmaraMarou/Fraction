@@ -20,11 +20,7 @@ namespace fraction_kata
 
         public Fraction Add(Fraction fraction)
         {
-            if (_denominator != fraction._denominator)
-            {
-                return new Fraction(_numerator * fraction._denominator + _denominator * fraction._numerator, _denominator * fraction._denominator);
-            }
-            return new Fraction(_numerator + fraction._numerator, _denominator);
+            return new Fraction(_numerator * fraction._denominator + _denominator * fraction._numerator, _denominator * fraction._denominator);
         }
 
         public bool Equals(Fraction other)
