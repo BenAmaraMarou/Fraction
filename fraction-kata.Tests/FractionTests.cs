@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using System;
+using NUnit.Framework;
 
 namespace fraction_kata.Tests
 {
@@ -31,6 +32,7 @@ namespace fraction_kata.Tests
         {
             Fraction actual = new Fraction(5, 1).Add(new Fraction(2, 1));
             Assert.AreEqual(7, actual.Numerator());
+            Assert.AreEqual(1, actual.Denominator());
         }
 
         private class Fraction
@@ -52,6 +54,11 @@ namespace fraction_kata.Tests
             internal Fraction Add(Fraction fraction)
             {
                 return new Fraction(_number + fraction._number);
+            }
+
+            internal double Denominator()
+            {
+                return 1;
             }
 
             internal double Numerator()
