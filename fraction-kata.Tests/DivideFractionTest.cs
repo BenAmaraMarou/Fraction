@@ -12,10 +12,13 @@ namespace fraction_kata.Tests
             Assert.AreEqual(new Fraction(0), new Fraction(0).Divide(new Fraction(nonZero)));
         }
         
-        [Test]
-        public void OneDenominator()
+        [TestCase(1)]
+        [TestCase(8)]
+        [TestCase(0)]
+        [TestCase(-3)]
+        public void OneDenominator(int numerator)
         {
-            Assert.AreEqual(new Fraction(8), new Fraction(8).Divide(new Fraction(1)));
+            Assert.AreEqual(new Fraction(numerator), new Fraction(numerator).Divide(new Fraction(1)));
         }
     }
 }
