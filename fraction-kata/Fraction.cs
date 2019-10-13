@@ -10,12 +10,6 @@ namespace fraction_kata
         public Fraction(int number) : this(number, 1)
         { }
 
-        public Fraction Multiply(Fraction fraction)
-        {
-            if (_numerator == 5) return new Fraction(5);
-            return new Fraction(0);
-        }
-
         public Fraction(int numerator, int denominator)
         {
             if (denominator == 0)
@@ -37,6 +31,11 @@ namespace fraction_kata
         public Fraction Substract(Fraction fraction)
         {
             return Add(fraction.Minus());
+        }
+
+        public Fraction Multiply(Fraction fraction)
+        {
+            return new Fraction(_numerator * fraction._numerator);
         }
 
         public Fraction Minus()

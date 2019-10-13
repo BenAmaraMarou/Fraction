@@ -8,15 +8,17 @@ namespace fraction_kata.Tests
         [TestCase(1)]
         [TestCase(-1)]
         [TestCase(0)]
-        public void MultiplyZero(int nonZero)
+        public void MultiplyZero(int number)
         {
-            Assert.AreEqual(new Fraction(0), new Fraction(nonZero).Multiply(new Fraction(0)));
+            Assert.AreEqual(new Fraction(0), new Fraction(number).Multiply(new Fraction(0)));
         }
 
-        [Test]
-        public void MultiplyOne()
+        [TestCase(5)]
+        [TestCase(-5)]
+        [TestCase(1)]
+        public void MultiplyOne(int number)
         {
-            Assert.AreEqual(new Fraction(5), new Fraction(5).Multiply(new Fraction(1)));
+            Assert.AreEqual(new Fraction(number), new Fraction(number).Multiply(new Fraction(1)));
         }
 
     }
