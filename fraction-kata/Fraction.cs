@@ -12,10 +12,15 @@ namespace fraction_kata
 
         public Fraction(int numerator, int denominator)
         {
+            if (denominator == 0)
+            {
+                throw new DivideByZeroException("Fraction with '0' denominator is not allowed.");
+            }
+
             var sign = denominator < 0 ? -1 : 1;
-            var gcd = GeatestCommonDivisor.Gcd(numerator, denominator);
-            _numerator = numerator * sign / gcd;
-            _denominator = denominator * sign / gcd;
+            var gcd = GeatestCommonDivisor.Gcd(numerator, denominator) * sign;
+            _numerator = numerator / gcd;
+            _denominator = denominator / gcd;
         }
 
         public Fraction Add(Fraction fraction)

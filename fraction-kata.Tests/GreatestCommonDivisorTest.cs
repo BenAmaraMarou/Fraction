@@ -43,5 +43,13 @@ namespace fraction_kata.Tests
             Assert.AreEqual(4, GeatestCommonDivisor.Gcd(-28, 32));
             Assert.AreEqual(4, GeatestCommonDivisor.Gcd(28, -32));
         }
+
+        [Test]
+        public void Zero()
+        {
+            Assert.AreEqual(0, GeatestCommonDivisor.Gcd(0, 0));
+            Assert.AreEqual(10, GeatestCommonDivisor.Gcd(0, 10));
+            Assert.AreEqual(10, GeatestCommonDivisor.Gcd(10, 0));
+        }
     }
 }

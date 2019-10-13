@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using System;
 
 namespace fraction_kata.Tests
 {
@@ -39,7 +40,7 @@ namespace fraction_kata.Tests
         {
             Assert.AreEqual(new Fraction(-6, 8), new Fraction(numerator, denominator).Add(new Fraction(-1, 4)));
         }
-        
+
         [Test]
         public void ReduceSameDenominator()
         {
@@ -62,6 +63,13 @@ namespace fraction_kata.Tests
         public void ReduceFractionsWithNonMultipleDenominators()
         {
             Assert.AreEqual(new Fraction(13, 6), new Fraction(2, 3).Add(new Fraction(6, 4)));
-        } 
+        }
+
+        [Test]
+        public void ThrowExceptionWhenDenominatorIsZero()
+        {
+            var exception = Assert.Throws<DivideByZeroException>(() => new Fraction(1, 0));
+            Assert.That(exception.Message, Is.EqualTo("Fraction with '0' denominator is not allowed."));
+        }
     }
 }
