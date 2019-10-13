@@ -4,11 +4,17 @@ namespace fraction_kata.Tests
 {
     public class SubstractFraction
     {
-        [Test]
-        public void SubstractZero()
+        [TestCase(0)]
+        [TestCase(1)]
+        public void SubstractZero(int number)
         {
-            Assert.AreEqual(new Fraction(0), new Fraction(0).Substract(new Fraction(0)));
+            Assert.AreEqual(new Fraction(number), new Fraction(number).Substract(new Fraction(0)));
         }
+
+
+
+
+
 
     }
 }
