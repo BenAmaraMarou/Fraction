@@ -1,5 +1,4 @@
-﻿using System;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 
 namespace fraction_kata.Tests
 {
@@ -9,19 +8,22 @@ namespace fraction_kata.Tests
         [TestCase(-1)]
         public void AddZeroToNonZero(int nonZero)
         {
-            Assert.AreEqual(nonZero, new Fraction(nonZero).Add(new Fraction(0)));
+            Fraction actual = new Fraction(nonZero).AddFraction(new Fraction(0));
+            Assert.AreEqual(nonZero, actual.Numerator());
         }
 
         [Test]
         public void AddPositiveIntegers()
         {
-            Assert.AreEqual(3, new Fraction(1).Add(new Fraction(2)));
+            Fraction actual = new Fraction(1).AddFraction(new Fraction(2));
+            Assert.AreEqual(3, actual.Numerator());
         }
 
         [Test]
         public void AddNegativeIntegers()
         {
-            Assert.AreEqual(-3, new Fraction(-1).Add(new Fraction(-2)));
+            Fraction actual = new Fraction(-1).AddFraction(new Fraction(-2));
+            Assert.AreEqual(-3, actual.Numerator());
         }
 
         [Test]
