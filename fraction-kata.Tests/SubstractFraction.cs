@@ -6,43 +6,41 @@ namespace fraction_kata.Tests
     {
         [TestCase(0)]
         [TestCase(1)]
+        [TestCase(-1)]
         public void SubstractZero(int number)
         {
             Assert.AreEqual(new Fraction(number), new Fraction(number).Substract(new Fraction(0)));
         }
         
-        [Test]
-        public void SubstractIntegers()
+        [TestCase(1 ,3)]
+        [TestCase(-1 , 3)]
+        [TestCase(1 , -3)]
+        [TestCase(-1 , -3)]
+        public void SubstractNonZero(int first, int second)
         {
-            Assert.AreEqual(new Fraction(2), new Fraction(3).Substract(new Fraction(1)));
-        }
-
-        [Test]
-        public void SubstractNegativeIntegers()
-        {
-            Assert.AreEqual(new Fraction(1), new Fraction(-1).Substract(new Fraction(-2)));
+            Assert.AreEqual(new Fraction(first - second), new Fraction(first).Substract(new Fraction(second)));
         }
         
         [Test]
-        public void SubstractFractionsWithSameDenominator()
+        public void FractionsWithSameDenominator()
         {
             Assert.AreEqual(new Fraction(1, 3), new Fraction(2, 3).Substract(new Fraction(1, 3)));
         }
         
         [Test]
-        public void SubstractFractionsWithDifferentDenominators()
+        public void FractionsWithDifferentDenominators()
         {
             Assert.AreEqual(new Fraction(1, 6), new Fraction(1, 2).Substract(new Fraction(1, 3)));
         }
 
         [Test]
-        public void SubstractNegativeFractions()
+        public void NegativeFractions()
         {
             Assert.AreEqual(new Fraction(-1, 6), new Fraction(-1, 2).Substract(new Fraction(-1, 3)));
         }
                
         [Test]
-        public void SubstractNegativeFractionsOnDenominator()
+        public void NegativeFractionsOnDenominator()
         {
             Assert.AreEqual(new Fraction(-1, 6), new Fraction(1, -2).Substract(new Fraction(1, -3)));
         }
