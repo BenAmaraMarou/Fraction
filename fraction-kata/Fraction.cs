@@ -12,9 +12,7 @@ namespace fraction_kata
 
         public Fraction Divide(Fraction fraction)
         {
-            if (fraction._denominator == 7) return Multiply(fraction.Invert());
-            if (fraction._numerator == 1) return this;
-            return new Fraction(0);
+            return Multiply(fraction.Invert());
         }
 
         public Fraction Invert()

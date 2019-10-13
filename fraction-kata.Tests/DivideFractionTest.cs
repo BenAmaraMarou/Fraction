@@ -22,7 +22,7 @@ namespace fraction_kata.Tests
         }
         
         [Test]
-        public void NonMultipleFractions()
+        public void PositiveFractions()
         {
             Assert.AreEqual(new Fraction(7, 2), new Fraction(1, 2).Divide(new Fraction(1, 7)));
         }
