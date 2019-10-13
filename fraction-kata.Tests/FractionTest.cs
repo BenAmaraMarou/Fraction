@@ -57,5 +57,11 @@ namespace fraction_kata.Tests
         {
             Assert.AreEqual(new Fraction(11, 8), new Fraction(3, 4).Add(new Fraction(5, 8)));
         }
+
+        [Test]
+        public void ReduceFractionsWithNonMultipleDenominators()
+        {
+            Assert.AreEqual(new Fraction(13, 6), new Fraction(2, 3).Add(new Fraction(6, 4)));
+        } 
     }
 }
