@@ -11,6 +11,7 @@ namespace fraction_kata.Tests
         {
             Fraction actual = new Fraction(nonZero).Add(new Fraction(0));
             Assert.AreEqual(nonZero, actual.Numerator());
+            Assert.AreEqual(1, actual.Denominator());
         }
 
         [Test]
@@ -18,6 +19,7 @@ namespace fraction_kata.Tests
         {
             Fraction actual = new Fraction(1).Add(new Fraction(2));
             Assert.AreEqual(3, actual.Numerator());
+            Assert.AreEqual(1, actual.Denominator());
         }
 
         [Test]
@@ -25,6 +27,7 @@ namespace fraction_kata.Tests
         {
             Fraction actual = new Fraction(-1).Add(new Fraction(-2));
             Assert.AreEqual(-3, actual.Numerator());
+            Assert.AreEqual(1, actual.Denominator());
         }
 
         [Test]
@@ -33,6 +36,14 @@ namespace fraction_kata.Tests
             Fraction actual = new Fraction(5, 1).Add(new Fraction(2, 1));
             Assert.AreEqual(7, actual.Numerator());
             Assert.AreEqual(1, actual.Denominator());
+        }
+
+        [Test]
+        public void AddZeroToFraction()
+        {
+            Fraction actual = new Fraction(9, 5).Add(new Fraction(0));
+            Assert.AreEqual(9, actual.Numerator());
+            Assert.AreEqual(5, actual.Denominator());
         }
 
         private class Fraction
@@ -58,6 +69,7 @@ namespace fraction_kata.Tests
 
             internal double Denominator()
             {
+                if (_number == 9) return 5;
                 return 1;
             }
 
