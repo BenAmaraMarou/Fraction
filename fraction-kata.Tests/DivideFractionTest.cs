@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using System;
 
 namespace fraction_kata.Tests
 {
@@ -43,6 +44,13 @@ namespace fraction_kata.Tests
         public void Reduce()
         {
             Assert.AreEqual(new Fraction(1, 2), new Fraction(2, 8).Divide(new Fraction(1, 2)));
+        }
+        
+        [Test]
+        public void ThrowExceptionWhenDenominatorIsZero()
+        {
+            var exception = Assert.Throws<DivideByZeroException>(() => new Fraction(3, 4).Divide(new Fraction(0)));
+            Assert.That(exception.Message, Is.EqualTo("Division by '0' is not allowed."));
         }
     }
 }

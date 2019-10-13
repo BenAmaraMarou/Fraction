@@ -10,16 +10,6 @@ namespace fraction_kata
         public Fraction(int number) : this(number, 1)
         { }
 
-        public Fraction Divide(Fraction fraction)
-        {
-            return Multiply(fraction.Invert());
-        }
-
-        public Fraction Invert()
-        {
-            return new Fraction(_denominator, _numerator);
-        }
-
         public Fraction(int numerator, int denominator)
         {
             if (denominator == 0)
@@ -46,6 +36,20 @@ namespace fraction_kata
         public Fraction Multiply(Fraction fraction)
         {
             return new Fraction(_numerator * fraction._numerator, _denominator * fraction._denominator);
+        }
+        
+        public Fraction Divide(Fraction fraction)
+        {
+            if (fraction.Equals(new Fraction(0)))
+            {
+                throw new DivideByZeroException("Division by '0' is not allowed.");
+            }
+            return Multiply(fraction.Invert());
+        }
+
+        public Fraction Invert()
+        {
+            return new Fraction(_denominator, _numerator);
         }
 
         public Fraction Minus()
