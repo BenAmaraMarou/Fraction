@@ -20,5 +20,11 @@ namespace fraction_kata.Tests
         {
             Assert.AreEqual(new Fraction(numerator), new Fraction(numerator).Divide(new Fraction(1)));
         }
+        
+        [Test]
+        public void NonMultipleFractions()
+        {
+            Assert.AreEqual(new Fraction(7, 2), new Fraction(1, 2).Divide(new Fraction(1, 7)));
+        }
     }
 }
