@@ -1,16 +1,19 @@
 ﻿using NUnit.Framework;
+using System;
 
 namespace fraction_kata.Tests
 {
     public class FractionTests
     {
+        [TestCase(0)]
         [TestCase(1)]
         [TestCase(-1)]
-        public void AddZeroToNonZero(int nonZero)
+        public void AddZeroToAny(int nonZero)
         {
             Fraction actual = new Fraction(nonZero).Add(new Fraction(0));
             Assert.AreEqual(nonZero, actual.Numerator());
             Assert.AreEqual(1, actual.Denominator());
+            Assert.AreEqual(new Fraction(nonZero), actual);
         }
 
         [Test]
@@ -68,9 +71,8 @@ namespace fraction_kata.Tests
             Assert.AreEqual(-3, actual.Numerator());
             Assert.AreEqual(7, actual.Denominator());
         }
-        
 
-        private class Fraction
+        private class Fraction : IEquatable<Fraction>
         {
             private readonly int _numerator;
             private readonly int _denominator;
@@ -102,6 +104,29 @@ namespace fraction_kata.Tests
             internal int Numerator()
             {
                 return _numerator;
+            }
+
+            public bool Equals(Fraction other)
+            {
+                return _numerator == other._numerator && _denominator.Equals(other._denominator);
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (ReferenceEquals(null, obj)) return false;
+                if (ReferenceEquals(this, obj)) return true;
+                if (obj.GetType() != this.GetType()) return false;
+                return Equals((Fraction)obj);
+            }
+
+            public override int GetHashCode()
+            {
+                unchecked { return (_numerator * 397) ^ (_denominator * 397); }
+            }
+
+            public override string ToString()
+            {
+                return $"Fraction: Numerator={_numerator}, Denominator={_denominator}";
             }
         }
     }
