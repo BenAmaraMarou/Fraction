@@ -24,8 +24,6 @@ namespace fraction_kata
             {
                 return new Fraction(_numerator * fraction._denominator + _denominator * fraction._numerator, _denominator * fraction._denominator);
             }
-            if (_denominator == 4) return new Fraction(1, 2);
-            if (_denominator == 2 && _denominator == fraction._denominator) return new Fraction(1);
             return new Fraction(_numerator + fraction._numerator, _denominator);
         }
 
