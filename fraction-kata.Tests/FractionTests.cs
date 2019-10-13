@@ -23,13 +23,26 @@ namespace fraction_kata.Tests
             Assert.AreEqual(-3, new Fraction(-1).Add(new Fraction(-2)));
         }
 
+        [Test]
+        public void AddFractionsWithDefaultDenominator()
+        {
+            Assert.AreEqual(7, new Fraction(5, 1).Add(new Fraction(2, 1)));
+        }
+
         private class Fraction
         {
             private readonly int _number;
+            private readonly int _denominator;
 
             public Fraction(int number)
             {
                 _number = number;
+            }
+
+            public Fraction(int number, int denominator)
+            {
+                _number = number;
+                _denominator = denominator;
             }
 
             internal int Add(Fraction fraction)
