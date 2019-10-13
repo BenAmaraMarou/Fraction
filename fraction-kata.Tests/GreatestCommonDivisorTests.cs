@@ -19,6 +19,14 @@ namespace fraction_kata.Tests
             Assert.AreEqual(1, Gcd(3, 7));
             Assert.AreEqual(-1, Gcd(-2, -3));
         }
+        
+        [Test]
+        public void OneMulptipleOfOther()
+        {
+            Assert.AreEqual(3, Gcd(3, 6));
+            Assert.AreEqual(2, Gcd(10, 12));
+            Assert.AreEqual(5, Gcd(5, 30));
+        }
 
         private int Gcd(int a, int b)
         {
