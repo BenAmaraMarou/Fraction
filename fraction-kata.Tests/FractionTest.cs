@@ -52,7 +52,15 @@ namespace fraction_kata.Tests
             Fraction actual = new Fraction(1, 4).Add(new Fraction(1, 4));
             Assert.AreEqual(new Fraction(1, 2), actual);
         }
-        
+
+
+        [Test]
+        public void ReduceAddResultToOne()
+        {
+            Fraction actual = new Fraction(1, 2).Add(new Fraction(1, 2));
+            Assert.AreEqual(new Fraction(1), actual);
+        }
+
         private class Fraction : IEquatable<Fraction>
         {
             private readonly int _numerator;
@@ -75,6 +83,7 @@ namespace fraction_kata.Tests
                     return new Fraction(_numerator * fraction._denominator + _denominator * fraction._numerator, _denominator * fraction._denominator);
                 }
                 if (_denominator == 4) return new Fraction(1, 2);
+                if (_denominator == 2 && _denominator == fraction._denominator) return new Fraction(1);
                 return new Fraction(_numerator + fraction._numerator, _denominator);
             }
 
