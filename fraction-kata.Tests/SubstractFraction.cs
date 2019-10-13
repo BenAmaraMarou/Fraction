@@ -44,5 +44,29 @@ namespace fraction_kata.Tests
         {
             Assert.AreEqual(new Fraction(-1, 6), new Fraction(1, -2).Substract(new Fraction(1, -3)));
         }
+        
+        [Test]
+        public void ReduceSameDenominator()
+        {
+            Assert.AreEqual(new Fraction(2, 5), new Fraction(3, 5).Substract(new Fraction(1, 5)));
+        }
+
+        [Test]
+        public void ReduceToOne()
+        {
+            Assert.AreEqual(new Fraction(1), new Fraction(3, 2).Substract(new Fraction(1, 2)));
+        }
+
+        [Test]
+        public void ReduceFractionsWithMultipleDenominators()
+        {
+            Assert.AreEqual(new Fraction(1, 8), new Fraction(3, 4).Substract(new Fraction(5, 8)));
+        }
+
+        [Test]
+        public void ReduceFractionsWithNonMultipleDenominators()
+        {
+            Assert.AreEqual(new Fraction(-5, 6), new Fraction(2, 3).Substract(new Fraction(6, 4)));
+        }
     }
 }
