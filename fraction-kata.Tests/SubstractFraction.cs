@@ -10,11 +10,11 @@ namespace fraction_kata.Tests
         {
             Assert.AreEqual(new Fraction(number), new Fraction(number).Substract(new Fraction(0)));
         }
-
-
-
-
-
-
+        
+        [Test]
+        public void SubstractIntegers()
+        {
+            Assert.AreEqual(new Fraction(2), new Fraction(3).Substract(new Fraction(1)));
+        }
     }
 }

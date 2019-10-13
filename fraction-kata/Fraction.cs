@@ -12,7 +12,7 @@ namespace fraction_kata
 
         public Fraction Substract(Fraction fraction)
         {
-            return new Fraction(_numerator);
+            return new Fraction(_numerator - fraction._numerator);
         }
 
         public Fraction(int numerator, int denominator)
