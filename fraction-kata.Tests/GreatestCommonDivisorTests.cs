@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using System;
 
 namespace fraction_kata.Tests
 {
@@ -9,7 +10,7 @@ namespace fraction_kata.Tests
         {
             Assert.AreEqual(1, Gcd(1, 1));
             Assert.AreEqual(2, Gcd(2, 2));
-            Assert.AreEqual(-1, Gcd(-1, -1));
+            Assert.AreEqual(1, Gcd(-1, -1));
         }
 
         [Test]
@@ -17,7 +18,7 @@ namespace fraction_kata.Tests
         {
             Assert.AreEqual(1, Gcd(2, 5));
             Assert.AreEqual(1, Gcd(3, 7));
-            Assert.AreEqual(-1, Gcd(-2, -3));
+            Assert.AreEqual(1, Gcd(-2, -3));
         }
         
         [Test]
@@ -33,15 +34,15 @@ namespace fraction_kata.Tests
         {
             Assert.AreEqual(2, Gcd(6, 8));
             Assert.AreEqual(21, Gcd(63, 147));
-            Assert.AreEqual(-15, Gcd(-105, -150));
+            Assert.AreEqual(15, Gcd(-105, -150));
         }
 
         [Test]
         public void NegativeNumbers()
         {
-            Assert.AreEqual(-4, Gcd(-28, -32));
+            Assert.AreEqual(4, Gcd(-28, -32));
             Assert.AreEqual(4, Gcd(-28, 32));
-            Assert.AreEqual(-4, Gcd(28, -32));
+            Assert.AreEqual(4, Gcd(28, -32));
         }
 
         private int Gcd(int a, int b)
@@ -52,7 +53,7 @@ namespace fraction_kata.Tests
                 b = a % b;
                 a = t;
             }
-            return a;
+            return Math.Abs(a);
         }
 
     }
