@@ -14,18 +14,14 @@ namespace fraction_kata.Tests
             Assert.AreEqual(new Fraction(nonZero), actual);
         }
 
-        [Test]
-        public void AddPositiveIntegers()
+        [TestCase(1, 2)]
+        [TestCase(-1, 2)]
+        [TestCase(1, -2)]
+        [TestCase(-1, -2)]
+        public void AddNonZeroIntegers(int first, int second)
         {
-            Fraction actual = new Fraction(1).Add(new Fraction(2));
-            Assert.AreEqual(new Fraction(3), actual);
-        }
-
-        [Test]
-        public void AddNegativeIntegers()
-        {
-            Fraction actual = new Fraction(-1).Add(new Fraction(-2));
-            Assert.AreEqual(new Fraction(-3), actual);
+            Fraction actual = new Fraction(first).Add(new Fraction(second));
+            Assert.AreEqual(new Fraction(first + second), actual);
         }
 
         [Test]
@@ -42,25 +38,12 @@ namespace fraction_kata.Tests
             Assert.AreEqual(new Fraction(5, 6), actual);
         }
 
-        [Test]
-        public void AddNegativeFractionsOnNumerator()
+        [TestCase(-1, 2)]
+        [TestCase(1, -2)]
+        public void AddNegativeFractions(int numerator, int denominator)
         {
-            Fraction actual = new Fraction(-1, 2).Add(new Fraction(-1, 4));
+            Fraction actual = new Fraction(numerator, denominator).Add(new Fraction(-1, 4));
             Assert.AreEqual(new Fraction(-6, 8), actual);
-        }
-
-        [Test]
-        public void AddNegativeFractionsOnDenominator()
-        {
-            Fraction actual = new Fraction(1, -2).Add(new Fraction(-1, 4));
-            Assert.AreEqual(new Fraction(-6, 8), actual);
-        }
-
-        [Test]
-        public void AddFractionsWithSameNegativeDenominator()
-        {
-            Fraction actual = new Fraction(1, -7).Add(new Fraction(2, -7));
-            Assert.AreEqual(new Fraction(-3, 7), actual);
         }
 
         private class Fraction : IEquatable<Fraction>
